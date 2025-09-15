@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>BuddyTalks</title>
+  <link rel="icon" href="./img/buddy (2).png" type="image/png" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo-container">
+    <img src="img/logo.png" alt="BuddyTalks" class="logo" />
+  </div>
+  <div class="user-menu">
+    <span id="profileBtn" class="material-icons">account_circle</span>
+  </div>
+
+  <div id="profileModal" class="hidden">
+    <div class="profile-modal-content">
+      <button id="closeModalBtn">&times;</button>
+      <img id="profileImage" alt="Profile Image" />
+      <button id="imageBtn">Upload</button>
+      <div id="uploadSection" class="hidden">
+        <input type="file" id="profileImageInput" accept="image/*" />
+        <button id="saveProfileBtn">Save</button>
+      </div>
+      <h3 id="modalName">User Name</h3>
+      <p id="modalMobile">Mobile Number</p>
+      <button id="logoutModalBtn">Logout</button>
+      
+    </div>
+  </div>
+</header>
+
+<!-- Search Bar -->
+<div class="search-wrapper">
+  <div class="search-container">
+    <span class="material-icons search-icon">search</span>
+    <input type="text" placeholder="Search For Buddies... 🐶👫💬" id="searchInput" />
+  </div>
+  <div id="searchResults" class="search-results"></div>
+</div>
+
+<!-- Welcome Container -->
+<div id="welcomeContainer" class="welcome-container">
+  <div class="welcome-center">
+    <h1>Welcome, <span id="userName">User</span> ❤️‍🔥</h1>
+    <button id="startChatBtn" class="start-chat-btn">Start a Chat</button>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main id="mainContent" class="hidden">
+  <div class="recent-chats" id="recentChats"></div>
+</main>
+
+<!-- Chat Window -->
+<div id="chatWindow" class="chat-window hidden">
+  <div class="chat-header">
+    <div class="chat-user-info">
+      <button id="backBtn" class="backed-btn">
+        <img src="img/back.png" alt="Back" />
+      </button>
+      <div class="user-details">
+        <h3 id="chatUserName">Name</h3>
+        <p id="chatUserMobile">Mobile</p>
+      </div>
+    </div>
+
+    <div class="chat-actions">
+      <button class="icon-button" id="videoCallBtn" aria-label="Start video call">
+        <span class="material-icons">videocam</span>
+      </button>
+      <button class="icon-button" id="userprofile" aria-label="Profile">
+    <span class="material-icons">account_circle</span>
+  </button>
+
+    </div>
+  </div>
+
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+    <button id="cameraBtn" class="material-icons">attach_file</button>
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<!-- Hidden File Input -->
+<input type="file" id="fileInput" accept="image/*" class="hidden" />
+
+<!-- Camera Modal -->
+<div id="cameraModal" class="hidden">
+  <div class="camera-content">
+    <video id="videoPreview" autoplay playsinline></video>
+    <button id="captureBtn">Capture</button>
+    <button id="closeCameraBtn">&times;</button>
+  </div>
+</div>
+
+<!-- Incoming Call Modal -->
+<div id="incomingCall" class="hidden">
+  <p>📞 Incoming call from <span id="callerName"></span></p>
+  <p><span id="callerMobile"></span></p>
+  <button id="acceptCallBtn">Accept</button>
+  <button id="declineCallBtn">Decline</button>
+</div>
+
+<!-- Active Video Call -->
+<!-- Active Video Call -->
+<div id="activeCall" class="hidden video-call-popup">
+  <!-- Fullscreen Video Call -->
+  <div class="call-fullscreen">
+    <button id="minimizeCallBtn" class="call-back-btn">
+      <span class="material-icons">arrow_back</span>
+    </button>
+
+    <div class="remote-video-container">
+      <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+
+    <div class="local-video-container">
+      <video id="localVideo" autoplay playsinline muted></video>
+    </div>
+
+    <div class="call-controls">
+      <button id="endCallBtn" class="end-call-btn">End Call</button>
+    </div>
+  </div>
+</div>
+
+<!--minipoup-->
+<div class="call-mini hidden" id="miniCallPopup">
+  <video id="miniRemoteVideo" autoplay playsinline></video> <!-- ✅ fixed ID -->
+  <button id="expandCallBtn" class="expand-call-btn">
+    <span class="material-icons">open_in_full</span>
+  </button>
+</div>
+
+<!-- Profile Popup for Chat User -->
+<div id="userProfilePopup" class="hidden">
+  <div class="popup-content">
+    <img id="popupProfileImage" src="img/default-profile.png" alt="Profile Picture">
+    <h2 id="popupName">Name</h2>
+    <p id="popupMobile">Mobile</p>
+    <button id="closeProfilePopup">Close</button>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
