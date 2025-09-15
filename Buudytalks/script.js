@@ -1,5 +1,5 @@
-const SUPABASE_URL = 'https://cmppzwvcgkmnesnaagyu.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNtcHB6d3ZjZ2ttbmVzbmFhZ3l1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0MzE0MDcsImV4cCI6MjA3MzAwNzQwN30.fDidGQtnIlqpbq_XkWe8cxRbPOeaMqS0Sh7X7qbuDGQ';
+const SUPABASE_URL = 'URL';
+const SUPABASE_ANON_KEY = 'KEY';
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const userName = localStorage.getItem('name') || "User";
@@ -1066,3 +1066,4 @@ closeProfilePopup.addEventListener("click", () => {
 userProfilePopup.addEventListener("click", e => {
   if (e.target === userProfilePopup) userProfilePopup.classList.add("hidden");
 });
+
