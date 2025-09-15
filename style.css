@@ -1,0 +1,254 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* prevent scrolling */
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Black and white fading gradient */
+  background: linear-gradient(180deg, #000000 0%, #555555 50%, #FFFFFF 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* prevent scrolling */
+}
+.slide-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#headingContainer h2 {
+  /* position: absolute; */  /* Removed */
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+  padding: 40px;
+  background: #0a0a0a;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Logo container */
+.logo-container {
+  width: 200px;            /* container width */
+  height: 80px;            /* container height */
+  background-color: #000;  /* black background */
+  overflow: hidden;        /* hide any edges outside container */
+  margin: 0 auto 15px auto; /* center horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo image */
+.logo {
+  width: auto;        /* adjust to fit container */
+  height: 100%;       /* fit vertically */
+  display: block;
+}
+
+
+/* Stylish heading */
+h2 {
+  font-family: 'Pacifico', cursive; /* modern, fun style */
+  text-align: center;
+  font-size: 32px;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+/* Form title stays professional */
+#form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #a6a5a5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+/* Button */
+button {
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Toggle text */
+.toggle-text {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #a6a6a6;
+}
+
+#toggleLink {
+  color: #4caf50;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
+  input, button {
+    font-size: 14px;
+  }
+}
+/* Spinner overlay */
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #4caf50;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* Message Box */
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 1001;
+  text-align: center;
+}
+
+#messageText {
+  font-size: 16px;
+  color: #333;
+}
+#splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+#buddy {
+  font-family: 'Pacifico', cursive;
+  font-size: 60px;
+  color: red;
+  margin: 0;
+  transform: translateX(-100vw);
+  animation: slideBuddy 1s forwards;
+}
+
+#talks {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px; /* slightly smaller */
+  color: red;
+  margin: 0;
+  position: relative;
+  top: -17px;       /* move up to be closer to Buddy */
+  transform: translateX(100vw);
+  animation: slideTalks 1s 1s forwards;
+}
+
+/* Buddy slides from left */
+@keyframes slideBuddy {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Talks slides from right */
+@keyframes slideTalks {
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>BuddyTalks - Login/Signup</title>
+  <!-- Google Fonts -->
+   <link rel="icon" href="./img/buddy (2).png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div id="splashScreen">
+  <h1 id="buddy">Buddy</h1>
+  <h1 id="talks">Talks💭</h1>
+</div>
+
+<!-- Login Container -->
+<div class="container">
+  <div class="form-wrapper">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="BuddyTalks" class="logo" />
+    </div>
+
+    <!-- With this: -->
+<div id="headingContainer">
+  <h2 class="fade-in">BuddyTalks👯</h2>
+  <h2 class="fade-out" style="display:none;">Chat Chill 💬😌</h2>
+  <h2 class="fade-out" style="display:none;">Talk Zone 🗣️📍</h2>
+  <h2 class="fade-out" style="display:none;">Real Talk 🎯🗨️</h2>
+</div>
+    <p id="form-title">Login to your account</p>
+
+    <form id="authForm">
+      <input type="text" id="name" placeholder="Name" style="display:none;" />
+      <input type="text" id="mobile" placeholder="Mobile Number" required maxlength="10" />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;" />
+      <button type="submit" id="submitBtn">Login</button>
+    </form>
+
+    <p class="toggle-text">
+      <span id="toggleMessage">Don't have an account?</span>
+      <span id="toggleLink">Sign Up</span>
+    </p>
+  </div>
+</div>
+
+  <!-- Spinner Overlay -->
+  <div id="spinner" class="spinner hidden">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Message Box -->
+  <div id="messageBox" class="message-box hidden">
+    <p id="messageText">Message here</p>
+  </div>
+
+  <!-- Supabase JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
